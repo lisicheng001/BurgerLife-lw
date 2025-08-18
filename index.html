@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerLife - Fun Burger Cooking Game Online | Play Free Now</title>
+    <meta name="description" content="Play BurgerLife, the ultimate burger cooking game! Create delicious burgers, serve customers, and build your restaurant empire. Free online game for kids and families.">
+    <meta name="keywords" content="BurgerLife, burger game, cooking game, restaurant game, kids games, online games, free games">
+    <link rel="canonical" href="https://burgerlife.online/">
+    <meta property="og:title" content="BurgerLife - Fun Burger Cooking Game Online">
+    <meta property="og:description" content="Create amazing burgers and run your own restaurant in this exciting cooking adventure!">
+    <meta property="og:url" content="https://burgerlife.online/">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd23f 100%);
+            min-height: 100vh;
+            color: #2c1810;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated background elements */
+        .bg-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .burger-icon {
+            width: 60px;
+            height: 60px;
+            background: #d2691e;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .burger-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .burger-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .burger-icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .burger-icon:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 107, 53, 0.05) 10px,
+                rgba(255, 107, 53, 0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50px); }
+            100% { transform: translateX(50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: bold;
+            color: #d2691e;
+            text-shadow: 3px 3px 0px #ff6b35, 6px 6px 0px #f7931e;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .tagline {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #8b4513;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b35, #d2691e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Game Section */
+        .game-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-section::before {
+            content: '🍔';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            opacity: 0.1;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #d2691e;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: #000;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 640px;
+            border: none;
+            display: block;
+        }
+
+        /* Play Button Overlay */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .play-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+        }
+
+        .play-button::before {
+            content: '▶';
+            margin-right: 10px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #fff8f0, #fff);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #ffd23f;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d2691e;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            color: #8b4513;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #5d4037;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 30px 30px 0 0;
+            margin-top: 50px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .game-section, .content-section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .game-container iframe {
+                height: 400px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .play-button {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 30px 0;
+            }
+
+            .game-container iframe {
+                height: 350px;
+            }
+
+            .feature-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="burger-icon bg-decoration"></div>
+    <div class="burger-icon bg-decoration"></div>
+    <div class="burger-icon bg-decoration"></div>
+    <div class="burger-icon bg-decoration"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>🍔 BurgerLife 🍔</h1>
+                <p class="tagline">Create amazing burgers and run your own restaurant in this exciting cooking adventure!</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="game-section">
+                <h2>🎮 Play BurgerLife Now</h2>
+                <div class="game-container">
+                    <div class="play-overlay" onclick="this.style.display='none'">
+                        <button class="play-button">Start Playing</button>
+                    </div>
+                    <iframe src="https://www.crazygames.com/embed/burger-life" 
+                            title="Burger Life" 
+                            loading="lazy" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>🍟 About BurgerLife</h2>
+                <p>Welcome to the most delicious cooking adventure ever! BurgerLife is an exciting restaurant management game where you become the ultimate burger chef. Build your dream restaurant, create mouth-watering burgers, and serve happy customers from around the world.</p>
+                
+                <p>In this fantastic cooking simulation, you'll start with a small burger stand and work your way up to owning the most popular restaurant in town. Learn to cook different types of burgers, manage your ingredients, and keep your customers satisfied with fast and friendly service.</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">👨‍🍳</span>
+                        <div class="feature-title">Master Chef</div>
+                        <div class="feature-desc">Learn to cook dozens of burger recipes with unique ingredients and special sauces</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🏪</span>
+                        <div class="feature-title">Restaurant Builder</div>
+                        <div class="feature-desc">Design and upgrade your restaurant with new equipment and decorations</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">😊</span>
+                        <div class="feature-title">Happy Customers</div>
+                        <div class="feature-desc">Serve customers quickly and earn tips to expand your burger empire</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <div class="feature-title">Fun Challenges</div>
+                        <div class="feature-desc">Complete daily challenges and unlock special achievements</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>🌟 Game Features</h2>
+                <p><strong>Easy to Learn:</strong> BurgerLife features simple, intuitive controls that make it perfect for players of all ages. Just click and drag to prepare ingredients, cook patties, and assemble delicious burgers!</p>
+                
+                <p><strong>Colorful Graphics:</strong> Enjoy bright, cheerful graphics that bring your burger restaurant to life. Every ingredient looks good enough to eat, and the animations are smooth and engaging.</p>
+                
+                <p><strong>Progressive Gameplay:</strong> Start with basic burgers and gradually unlock new ingredients, cooking techniques, and restaurant upgrades. The game grows with your skills!</p>
+                
+                <p><strong>Family-Friendly Fun:</strong> BurgerLife is designed to be safe and appropriate for children while still being entertaining for the whole family. No violence, just pure cooking fun!</p>
+            </section>
+
+            <section class="content-section">
+                <h2>🎪 How to Play</h2>
+                <p>Playing BurgerLife is as easy as flipping a burger! Here's how to get started:</p>
+                
+                <p><strong>1. Take Orders:</strong> Listen carefully to what each customer wants. They'll tell you exactly how they like their burger prepared.</p>
+                
+                <p><strong>2. Cook the Patty:</strong> Place the burger patty on the grill and cook it to perfection. Don't let it burn!</p>
+                
+                <p><strong>3. Add Toppings:</strong> Stack lettuce, tomatoes, cheese, pickles, and sauces according to the customer's order.</p>
+                
+                <p><strong>4. Serve Fast:</strong> Deliver the completed burger quickly to earn maximum points and tips!</p>
+                
+                <p><strong>5. Upgrade & Expand:</strong> Use your earnings to buy new ingredients, upgrade your equipment, and make your restaurant even better!</p>
+            </section>
+
+            <section class="content-section">
+                <h2>🏆 Why Kids Love BurgerLife</h2>
+                <p>BurgerLife has become one of the most popular cooking games for children because it combines learning with fun. Kids develop hand-eye coordination, time management skills, and creativity while playing. The game teaches the value of hard work and customer service in an entertaining way.</p>
+                
+                <p>Parents love BurgerLife too because it's completely safe, educational, and doesn't require any downloads or installations. Just open your web browser and start playing immediately!</p>
+                
+                <p>Join millions of players worldwide who have discovered the joy of running their own burger restaurant. Whether you're 5 or 95, BurgerLife offers endless hours of delicious entertainment!</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 BurgerLife.online - The Ultimate Burger Cooking Game Experience</p>
+            <p>🍔 Cook, Serve, and Have Fun! 🍔</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Add click sound effect simulation
+            document.querySelectorAll('.feature-card, .play-button').forEach(element => {
+                element.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
