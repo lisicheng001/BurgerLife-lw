@@ -7,10 +7,20 @@
     <meta name="description" content="Play BurgerLife, the ultimate burger cooking game! Create delicious burgers, serve customers, and build your restaurant empire. Free online game for kids and families.">
     <meta name="keywords" content="BurgerLife, burger game, cooking game, restaurant game, kids games, online games, free games">
     <link rel="canonical" href="https://burgerlife.online/">
+    
+    <!-- Added favicon and logo meta tags for Google search visibility -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b35'/%3E%3Cpath d='M20 40h60c5 0 5 5 0 5H20c-5 0-5-5 0-5z' fill='%23d2691e'/%3E%3Cpath d='M25 50h50c3 0 3 3 0 3H25c-3 0-3-3 0-3z' fill='%23228b22'/%3E%3Cpath d='M30 56h40c2 0 2 2 0 2H30c-2 0-2-2 0-2z' fill='%23ff6347'/%3E%3Cpath d='M25 62h50c3 0 3 3 0 3H25c-3 0-3-3 0-3z' fill='%23ffd700'/%3E%3Cpath d='M20 68h60c5 0 5 5 0 5H20c-5 0-5-5 0-5z' fill='%23d2691e'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b35'/%3E%3Cpath d='M20 40h60c5 0 5 5 0 5H20c-5 0-5-5 0-5z' fill='%23d2691e'/%3E%3Cpath d='M25 50h50c3 0 3 3 0 3H25c-3 0-3-3 0-3z' fill='%23228b22'/%3E%3Cpath d='M30 56h40c2 0 2 2 0 2H30c-2 0-2-2 0-2z' fill='%23ff6347'/%3E%3Cpath d='M25 62h50c3 0 3 3 0 3H25c-3 0-3-3 0-3z' fill='%23ffd700'/%3E%3Cpath d='M20 68h60c5 0 5 5 0 5H20c-5 0-5-5 0-5z' fill='%23d2691e'/%3E%3C/svg%3E">
+    
+    <!-- Enhanced Open Graph meta tags with logo image -->
     <meta property="og:title" content="BurgerLife - Fun Burger Cooking Game Online">
     <meta property="og:description" content="Create amazing burgers and run your own restaurant in this exciting cooking adventure!">
     <meta property="og:url" content="https://burgerlife.online/">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23ff6b35'/%3E%3Ccircle cx='600' cy='315' r='200' fill='%23fff' opacity='0.1'/%3E%3Cg transform='translate(600,315)'%3E%3Cpath d='M-100 -50h200c25 0 25 25 0 25H-100c-25 0-25-25 0-25z' fill='%23d2691e'/%3E%3Cpath d='M-80 -10h160c15 0 15 15 0 15H-80c-15 0-15-15 0-15z' fill='%23228b22'/%3E%3Cpath d='M-60 20h120c10 0 10 10 0 10H-60c-10 0-10-10 0-10z' fill='%23ff6347'/%3E%3Cpath d='M-80 50h160c15 0 15 15 0 15H-80c-15 0-15-15 0-15z' fill='%23ffd700'/%3E%3Cpath d='M-100 80h200c25 0 25 25 0 25H-100c-25 0-25-25 0-25z' fill='%23d2691e'/%3E%3C/g%3E%3Ctext x='600' y='500' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='60' font-weight='bold'%3EBurgerLife.online%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BurgerLife - Fun Burger Cooking Game Online">
+    <meta name="twitter:description" content="Create amazing burgers and run your own restaurant in this exciting cooking adventure!">
     
     <style>
         * {
@@ -31,6 +41,80 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Added logo styles for header branding */
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d2691e, #ff6b35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: logoSpin 3s ease-in-out infinite;
+        }
+
+        @keyframes logoSpin {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        .logo-burger {
+            position: relative;
+            width: 30px;
+            height: 25px;
+        }
+
+        .bun-top, .bun-bottom {
+            width: 30px;
+            height: 8px;
+            background: #d2691e;
+            border-radius: 15px 15px 5px 5px;
+            position: absolute;
+        }
+
+        .bun-bottom {
+            bottom: 0;
+            border-radius: 5px 5px 15px 15px;
+        }
+
+        .lettuce {
+            width: 25px;
+            height: 3px;
+            background: #228b22;
+            position: absolute;
+            top: 10px;
+            left: 2.5px;
+            border-radius: 2px;
+        }
+
+        .tomato {
+            width: 20px;
+            height: 3px;
+            background: #ff6347;
+            position: absolute;
+            top: 14px;
+            left: 5px;
+            border-radius: 2px;
+        }
+
+        .cheese {
+            width: 25px;
+            height: 2px;
+            background: #ffd700;
+            position: absolute;
+            top: 17px;
+            left: 2.5px;
+            border-radius: 1px;
         }
 
         /* Animated background elements */
@@ -153,10 +237,20 @@
 
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 6vw, 3rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             color: white;
-            margin-bottom: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 4rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #ffd700, #ffff00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
         }
 
         .games-grid {
@@ -252,6 +346,208 @@
             transform: none;
         }
 
+        /* Comments Section */
+        .comments-section {
+            padding: 8rem 0; /* increased padding for more prominence */
+            background: linear-gradient(135deg, #ff1493, #ff69b4, #ffd700, #32cd32); /* added more vibrant colors */
+            margin-top: 6rem; /* increased top margin */
+            border-top: 15px solid #ffd700; /* made border thicker */
+            border-bottom: 15px solid #32cd32; /* made border thicker */
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 0 50px rgba(255, 20, 147, 0.8); /* added glowing shadow */
+        }
+
+        .comments-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50">🎉</text></svg>') repeat;
+            opacity: 0.2; /* increased opacity for more visibility */
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(4rem, 12vw, 8rem); /* made title much larger */
+            color: white;
+            margin-bottom: 4rem;
+            text-shadow: 6px 6px 12px rgba(0,0,0,0.8); /* stronger text shadow */
+            background: linear-gradient(45deg, #ffd700, #ffff00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite;
+            border: 8px solid #fff; /* added white border around title */
+            padding: 2rem; /* added padding inside border */
+            border-radius: 2rem; /* rounded corners */
+            background-color: rgba(255, 20, 147, 0.9); /* added background color */
+        }
+
+        .comments-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            position: relative;
+            z-index: 11;
+        }
+
+        .comment-card {
+            background: rgba(255,255,255,0.98);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border: 6px solid #ffd700;
+            animation: commentFloat 3s ease-in-out infinite;
+            transform: scale(1.05);
+        }
+
+        .comment-card:nth-child(odd) {
+            animation-delay: 1s;
+        }
+
+        .comment-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ff6b35;
+            box-shadow: 0 15px 40px rgba(255,107,53,0.2);
+        }
+
+        @keyframes commentFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .comment-avatar {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .comment-name {
+            font-weight: bold;
+            color: #d2691e;
+            font-size: 1.1rem;
+        }
+
+        .comment-stars {
+            font-size: 1.2rem;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .comment-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #2c1810;
+            font-weight: 500;
+        }
+
+        .add-comment-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 2rem;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .add-comment-title {
+            color: #d2691e;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .comment-input, .comment-textarea {
+            padding: 1rem;
+            border: 3px solid #ffd23f;
+            border-radius: 1rem;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .comment-input:focus, .comment-textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.2);
+        }
+
+        .comment-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-comment-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .submit-comment-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(255,107,53,0.4);
+        }
+
+        /* Confetti Animation */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile responsiveness for comments */
+        @media (max-width: 768px) {
+            .comments-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .add-comment-section {
+                margin: 0 1rem;
+                padding: 1.5rem;
+            }
+        }
+
         /* Footer */
         footer {
             background: rgba(139, 69, 19, 0.9);
@@ -278,6 +574,11 @@
 
             .game-header {
                 padding: 1rem;
+            }
+
+            .comments-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
     </style>
@@ -309,6 +610,18 @@
 
     <div class="container">
         <header>
+            <!-- Added logo with animated burger icon -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="logo-burger">
+                        <div class="bun-top"></div>
+                        <div class="lettuce"></div>
+                        <div class="tomato"></div>
+                        <div class="cheese"></div>
+                        <div class="bun-bottom"></div>
+                    </div>
+                </div>
+            </div>
             <h1>🍔 BurgerLife 🍔</h1>
             <p class="tagline">🌟 Your ultimate gaming destination! Play amazing games, have fun, and challenge yourself! 🌟</p>
         </header>
@@ -369,6 +682,93 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Comments Section -->
+            <section class="comments-section" id="comments-section">
+                <div style="text-align: center; margin-bottom: 4rem; padding: 3rem; background: rgba(255,255,255,0.95); border-radius: 3rem; border: 8px solid #ffd700; box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+                    <h2 style="font-size: clamp(3rem, 8vw, 6rem); color: #ff1493; margin-bottom: 2rem; text-shadow: 4px 4px 8px rgba(0,0,0,0.3); animation: bounce 2s ease-in-out infinite;">🌟🎉 WHAT KIDS ARE SAYING! 🎉🌟</h2>
+                    <p style="font-size: 2.5rem; color: #d2691e; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); animation: wiggle 2s ease-in-out infinite;">
+                        💬 AMAZING REVIEWS FROM HAPPY KIDS! 💬
+                    </p>
+                    <div style="font-size: 4rem; margin-top: 2rem; animation: sparkle 1s ease-in-out infinite;">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="comments-container">
+                    <div class="comment-card">
+                        <div class="comment-avatar">😊</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Emma, age 8</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"OMG! BurgerLife is the BEST game ever! I made 50 burgers and my restaurant is super cool! 🍔✨"</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-avatar">🤩</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Jake, age 10</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"I play every day after school! The truck game is AWESOME and I beat all my friends! 🚛💨"</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-avatar">🥳</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Sophia, age 7</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"So much fun! I love making burgers with cheese and tomatoes! My mom plays with me too! 🧀🍅"</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-avatar">😎</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Alex, age 9</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"Highway Traffic is SO COOL! I'm like a race car driver! Zoom zoom! 🏎️💨"</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-avatar">🤗</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Mia, age 6</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"I love all the colors and sounds! The games make me happy! Can I play forever? 🌈🎵"</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-avatar">🚀</div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-name">Lucas, age 11</span>
+                                <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="comment-text">"Best website EVER! I told all my friends at school! We play together online! 🎮👫"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-comment-section">
+                    <h3 class="add-comment-title">🎉 Tell us what you think! 🎉</h3>
+                    <div class="comment-form">
+                        <input type="text" placeholder="Your name and age (like Emma, age 8)" class="comment-input">
+                        <textarea placeholder="Tell us how much you LOVE these games! 😍" class="comment-textarea"></textarea>
+                        <button class="submit-comment-btn" onclick="addComment()">🌟 Share My Review! 🌟</button>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -388,6 +788,50 @@
         function closeGame() {
             document.getElementById('gameOverlay').style.display = 'none';
             document.getElementById('gameFrame').src = '';
+        }
+
+        function addComment() {
+            const nameInput = document.querySelector('.comment-input');
+            const textInput = document.querySelector('.comment-textarea');
+            
+            if (nameInput.value.trim() && textInput.value.trim()) {
+                // Create celebration effect
+                const btn = document.querySelector('.submit-comment-btn');
+                btn.innerHTML = '🎉 Thank you! 🎉';
+                btn.style.background = 'linear-gradient(45deg, #32cd32, #00ff00)';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    btn.innerHTML = '🌟 Share My Review! 🌟';
+                    btn.style.background = 'linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f)';
+                    nameInput.value = '';
+                    textInput.value = '';
+                }, 3000);
+                
+                // Add some confetti effect
+                createConfetti();
+            } else {
+                alert('Please tell us your name and what you think! 😊');
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#ff6b35', '#f7931e', '#ffd23f', '#32cd32', '#ff69b4'];
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.zIndex = '9999';
+                confetti.style.animation = `fall ${Math.random() * 2 + 2}s linear forwards`;
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 4000);
+            }
         }
 
         // Add some interactive elements
@@ -416,7 +860,7 @@
             });
 
             // Add click effects
-            document.querySelectorAll('.game-card, .play-btn').forEach(element => {
+            document.querySelectorAll('.game-card, .play-btn, .submit-comment-btn').forEach(element => {
                 element.addEventListener('click', function() {
                     this.style.transform = 'scale(0.95)';
                     setTimeout(() => {

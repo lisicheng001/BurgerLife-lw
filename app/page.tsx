@@ -12,6 +12,8 @@ export default function BurgerLifePage() {
   const [showFloatingElements, setShowFloatingElements] = useState(false)
   const [showGameOverlay, setShowGameOverlay] = useState(false)
   const [currentGame, setCurrentGame] = useState<string | null>(null)
+  const [gameLoading, setGameLoading] = useState(false)
+  const [gameError, setGameError] = useState(false)
   const [score, setScore] = useState(0)
   const [gameStarted, setGameStarted] = useState(false)
   const [burgerStack, setBurgerStack] = useState<string[]>(["bottom-bun"])
@@ -91,36 +93,36 @@ export default function BurgerLifePage() {
       available: true,
     },
     {
-      id: "game4",
-      title: "Coming Soon",
-      description: "Amazing adventure awaits!",
-      emoji: "🎯",
-      type: "placeholder",
-      available: false,
+      id: "pizza-maker",
+      title: "Pizza Maker",
+      description: "Create delicious pizzas with your favorite toppings!",
+      emoji: "🍕",
+      type: "custom",
+      available: true,
     },
     {
-      id: "game5",
-      title: "Coming Soon",
-      description: "Fun puzzle game in development!",
-      emoji: "🧩",
-      type: "placeholder",
-      available: false,
+      id: "memory-match",
+      title: "Memory Match",
+      description: "Test your memory with this fun card matching game!",
+      emoji: "🧠",
+      type: "custom",
+      available: true,
     },
     {
-      id: "game6",
-      title: "Coming Soon",
-      description: "Action-packed game coming soon!",
-      emoji: "⚡",
-      type: "placeholder",
-      available: false,
+      id: "color-clicker",
+      title: "Color Clicker",
+      description: "Click the right colors as fast as you can!",
+      emoji: "🌈",
+      type: "custom",
+      available: true,
     },
     {
-      id: "game7",
-      title: "Coming Soon",
-      description: "Mystery game in the works!",
-      emoji: "🌟",
-      type: "placeholder",
-      available: false,
+      id: "number-jump",
+      title: "Number Jump",
+      description: "Jump on the right numbers to score points!",
+      emoji: "🔢",
+      type: "custom",
+      available: true,
     },
   ]
 
@@ -173,6 +175,8 @@ export default function BurgerLifePage() {
     if (game && game.available) {
       setCurrentGame(gameId)
       setShowGameOverlay(true)
+      setGameLoading(false)
+      setGameError(false)
     }
   }
 
@@ -288,6 +292,90 @@ export default function BurgerLifePage() {
                     >
                       🚀 Start Cooking!
                     </Button>
+                  </div>
+                </div>
+              )}
+
+              {currentGame === "pizza-maker" && (
+                <div className="w-full h-full p-8 bg-gradient-to-br from-red-100 to-yellow-100">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-4 text-red-800">🍕 Pizza Maker</h3>
+                    <p className="text-lg text-gray-700 mb-6">Create amazing pizzas with your favorite toppings!</p>
+                    <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-6">
+                      {["🍅", "🧀", "🍄", "🥓", "🌶️", "🫒"].map((topping, index) => (
+                        <Button
+                          key={index}
+                          className="text-4xl p-4 bg-white hover:bg-yellow-100 border-2 border-red-300 rounded-xl"
+                          onClick={() => setScore(score + 10)}
+                        >
+                          {topping}
+                        </Button>
+                      ))}
+                    </div>
+                    <p className="text-xl font-bold text-red-600">Score: {score} 🏆</p>
+                  </div>
+                </div>
+              )}
+
+              {currentGame === "memory-match" && (
+                <div className="w-full h-full p-8 bg-gradient-to-br from-blue-100 to-purple-100">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-4 text-blue-800">🧠 Memory Match</h3>
+                    <p className="text-lg text-gray-700 mb-6">Find matching pairs of emojis!</p>
+                    <div className="grid grid-cols-4 gap-3 max-w-md mx-auto mb-6">
+                      {["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"].map((emoji, index) => (
+                        <Button
+                          key={index}
+                          className="text-3xl p-3 bg-white hover:bg-blue-100 border-2 border-blue-300 rounded-xl"
+                          onClick={() => setScore(score + 5)}
+                        >
+                          {emoji}
+                        </Button>
+                      ))}
+                    </div>
+                    <p className="text-xl font-bold text-blue-600">Score: {score} 🏆</p>
+                  </div>
+                </div>
+              )}
+
+              {currentGame === "color-clicker" && (
+                <div className="w-full h-full p-8 bg-gradient-to-br from-green-100 to-teal-100">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-4 text-green-800">🌈 Color Clicker</h3>
+                    <p className="text-lg text-gray-700 mb-6">Click the colors as fast as you can!</p>
+                    <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-6">
+                      {["🔴", "🟡", "🟢", "🔵", "🟣", "🟠"].map((color, index) => (
+                        <Button
+                          key={index}
+                          className="text-6xl p-6 bg-white hover:bg-green-100 border-2 border-green-300 rounded-xl transform hover:scale-110 transition-all duration-200"
+                          onClick={() => setScore(score + 1)}
+                        >
+                          {color}
+                        </Button>
+                      ))}
+                    </div>
+                    <p className="text-xl font-bold text-green-600">Score: {score} 🏆</p>
+                  </div>
+                </div>
+              )}
+
+              {currentGame === "number-jump" && (
+                <div className="w-full h-full p-8 bg-gradient-to-br from-purple-100 to-pink-100">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-4 text-purple-800">🔢 Number Jump</h3>
+                    <p className="text-lg text-gray-700 mb-6">Jump on the right numbers to score!</p>
+                    <div className="grid grid-cols-5 gap-3 max-w-lg mx-auto mb-6">
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number, index) => (
+                        <Button
+                          key={index}
+                          className="text-2xl p-4 bg-white hover:bg-purple-100 border-2 border-purple-300 rounded-xl font-bold transform hover:scale-110 transition-all duration-200"
+                          onClick={() => setScore(score + number)}
+                        >
+                          {number}
+                        </Button>
+                      ))}
+                    </div>
+                    <p className="text-xl font-bold text-purple-600">Score: {score} 🏆</p>
                   </div>
                 </div>
               )}
@@ -543,6 +631,104 @@ export default function BurgerLifePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 bg-gradient-to-br from-pink-400 via-purple-400 to-yellow-400 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Comments Header */}
+          <div className="text-center mb-12 bg-white/95 rounded-3xl p-8 border-8 border-yellow-300 shadow-2xl">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 bg-clip-text text-transparent">
+              🌟🎉 WHAT KIDS ARE SAYING! 🎉🌟
+            </h2>
+            <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-4">
+              💬 AMAZING REVIEWS FROM HAPPY KIDS! 💬
+            </p>
+            <div className="text-4xl">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          {/* Comments Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                name: "Emma, age 8",
+                emoji: "😊",
+                text: "OMG! BurgerLife is the BEST game ever! I made 50 burgers and my restaurant is super cool! 🍔✨",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+              {
+                name: "Jake, age 10",
+                emoji: "🤩",
+                text: "I play every day after school! The truck game is AWESOME and I beat all my friends! 🚛💨",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+              {
+                name: "Sophia, age 7",
+                emoji: "🥳",
+                text: "So much fun! I love making burgers with cheese and tomatoes! My mom plays with me too! 🧀🍅",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+              {
+                name: "Alex, age 9",
+                emoji: "😎",
+                text: "Highway Traffic is SO COOL! I'm like a race car driver! Zoom zoom! 🏎️💨",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+              {
+                name: "Mia, age 6",
+                emoji: "🤗",
+                text: "I love all the colors and sounds! The games make me happy! Can I play forever? 🌈🎵",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+              {
+                name: "Lucas, age 11",
+                emoji: "🚀",
+                text: "Best website EVER! I told all my friends at school! We play together online! 🎮👫",
+                stars: "⭐⭐⭐⭐⭐",
+              },
+            ].map((comment, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-white/98 border-4 border-yellow-300 hover:border-orange-400 transition-all duration-300 transform hover:scale-105 hover:-rotate-1 shadow-xl"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="text-center">
+                  <div className="text-4xl mb-3 bounce-in">{comment.emoji}</div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-bold text-orange-600 text-lg">{comment.name}</span>
+                    <div className="text-lg">{comment.stars}</div>
+                  </div>
+                  <p className="text-gray-800 font-medium leading-relaxed">{comment.text}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Add Comment Form */}
+          <Card className="p-8 bg-white/95 border-4 border-green-400 shadow-2xl max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-6 text-green-600">🎉 Tell us what you think! 🎉</h3>
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your name and age (like Emma, age 8)"
+                className="w-full p-4 border-3 border-yellow-300 rounded-xl font-bold text-lg focus:border-orange-400 focus:outline-none transition-all duration-300"
+              />
+              <textarea
+                placeholder="Tell us how much you LOVE these games! 😍"
+                rows={4}
+                className="w-full p-4 border-3 border-yellow-300 rounded-xl font-bold text-lg focus:border-orange-400 focus:outline-none transition-all duration-300 resize-none"
+              />
+              <Button
+                onClick={() => {
+                  // Simple celebration effect
+                  alert("🎉 Thank you for your awesome review! 🎉")
+                }}
+                className="w-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 hover:from-green-500 hover:via-blue-500 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-xl text-xl transform hover:scale-105 transition-all duration-300"
+              >
+                🌟 Share My Review! 🌟
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
 
