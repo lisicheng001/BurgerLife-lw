@@ -37,6 +37,7 @@ export default function BurgerLifePage() {
       emoji: "🍔",
       type: "custom",
       available: true,
+      coverImage: "/burger-cooking-game-colorful-chef-hat-ingredients.jpg",
     },
     {
       id: "highway-traffic",
@@ -46,6 +47,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html",
       available: true,
+      coverImage: "/highway-traffic-cars-racing-road-game.jpg",
     },
     {
       id: "domino-multiplayer",
@@ -55,6 +57,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://html5.gamedistribution.com/7fd4b7da7318410dbb9ba8b85a3d1b22/",
       available: true,
+      coverImage: "/domino-tiles-game-multiplayer-colorful.jpg",
     },
     {
       id: "merge-numbers",
@@ -64,6 +67,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://html5.gamedistribution.com/cb6bc654fd2344d785be7d6b87f7b253/",
       available: true,
+      coverImage: "/number-puzzle-merge-game-colorful-blocks.jpg",
     },
     {
       id: "truck-simulator",
@@ -73,6 +77,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://html5.gamedistribution.com/09a193f0c44944a982e01da73e9f1131/",
       available: true,
+      coverImage: "/truck-simulator-driving-game-big-truck-road.jpg",
     },
     {
       id: "squid-glass-bridge",
@@ -82,6 +87,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://html5.gamedistribution.com/474585251d1a4802bc0febcc438aa31d/",
       available: true,
+      coverImage: "/glass-bridge-game-squid-challenge-colorful.jpg",
     },
     {
       id: "mobile-legends-slime",
@@ -91,6 +97,7 @@ export default function BurgerLifePage() {
       type: "iframe",
       url: "https://html5.gamedistribution.com/f4d128de33f14bea95d3fe2382270bb4/",
       available: true,
+      coverImage: "/slime-battle-arena-game-colorful-characters.jpg",
     },
     {
       id: "pizza-maker",
@@ -99,6 +106,7 @@ export default function BurgerLifePage() {
       emoji: "🍕",
       type: "custom",
       available: true,
+      coverImage: "/pizza-making-game-colorful-toppings-chef.jpg",
     },
     {
       id: "memory-match",
@@ -107,6 +115,7 @@ export default function BurgerLifePage() {
       emoji: "🧠",
       type: "custom",
       available: true,
+      coverImage: "/memory-card-matching-game-colorful-cards-brain.jpg",
     },
     {
       id: "color-clicker",
@@ -115,6 +124,7 @@ export default function BurgerLifePage() {
       emoji: "🌈",
       type: "custom",
       available: true,
+      coverImage: "/color-clicking-game-rainbow-colorful-buttons.jpg",
     },
     {
       id: "number-jump",
@@ -123,6 +133,7 @@ export default function BurgerLifePage() {
       emoji: "🔢",
       type: "custom",
       available: true,
+      coverImage: "/number-jumping-game-colorful-numbers-platform.jpg",
     },
   ]
 
@@ -456,32 +467,35 @@ export default function BurgerLifePage() {
     <div className="min-h-screen bg-gradient-to-br from-orange-100 via-yellow-50 to-red-100 relative overflow-hidden">
       {showFloatingElements && (
         <div className="fixed inset-0 pointer-events-none z-0">
-          <div className="absolute top-20 left-10 text-4xl float-animation opacity-20">🍔</div>
+          <div className="absolute top-20 left-10 text-4xl float-animation opacity-20 text-orange-600">🍔</div>
           <div
-            className="absolute top-40 right-20 text-3xl float-animation opacity-20"
+            className="absolute top-40 right-20 text-3xl float-animation opacity-20 text-yellow-600"
             style={{ animationDelay: "1s" }}
           >
             🍟
           </div>
           <div
-            className="absolute top-60 left-1/4 text-2xl float-animation opacity-20"
+            className="absolute top-60 left-1/4 text-2xl float-animation opacity-20 text-blue-600"
             style={{ animationDelay: "2s" }}
           >
             🥤
           </div>
           <div
-            className="absolute bottom-40 right-10 text-4xl float-animation opacity-20"
+            className="absolute bottom-40 right-10 text-4xl float-animation opacity-20 text-yellow-600"
             style={{ animationDelay: "0.5s" }}
           >
             🧀
           </div>
           <div
-            className="absolute bottom-60 left-20 text-3xl float-animation opacity-20"
+            className="absolute bottom-60 left-20 text-3xl float-animation opacity-20 text-green-600"
             style={{ animationDelay: "1.5s" }}
           >
             🥬
           </div>
-          <div className="absolute top-1/3 right-1/3 text-2xl float-animation" style={{ animationDelay: "2.5s" }}>
+          <div
+            className="absolute top-1/3 right-1/3 text-2xl float-animation opacity-20 text-red-600"
+            style={{ animationDelay: "2.5s" }}
+          >
             🍅
           </div>
         </div>
@@ -490,14 +504,20 @@ export default function BurgerLifePage() {
       <header className="bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 text-white py-6 px-6 shadow-2xl relative z-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="text-4xl wiggle-animation">🍔</div>
+            <div className="text-4xl wiggle-animation" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
+              🍔
+            </div>
             <h1 className="text-3xl md:text-4xl font-bold gradient-text bg-white bg-clip-text text-transparent">
               BurgerLife
             </h1>
           </div>
-          <div className="hidden md:flex items-center gap-3 bg-white/20 rounded-full px-4 py-2 backdrop-blur-sm">
-            <span className="text-2xl bounce-in">🎮</span>
-            <span className="font-semibold">Free Online Game</span>
+          <div className="hidden md:flex items-center gap-3 bg-black/30 rounded-full px-4 py-2 backdrop-blur-sm border border-white/20">
+            <span className="text-2xl bounce-in" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.7)" }}>
+              🎮
+            </span>
+            <span className="font-semibold text-white" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.7)" }}>
+              Free Online Game
+            </span>
           </div>
         </div>
       </header>
@@ -527,8 +547,12 @@ export default function BurgerLifePage() {
                     ⭐ FEATURED
                   </div>
                   <div className="text-white">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-6xl">
-                      🍔
+                    <div className="w-32 h-32 mx-auto mb-4 rounded-2xl bg-white/20 backdrop-blur-sm overflow-hidden">
+                      <img
+                        src={games[0].coverImage || "/placeholder.svg"}
+                        alt={games[0].title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <h4 className="text-3xl font-bold mb-3">{games[0].title}</h4>
                     <p className="text-xl mb-6 opacity-90">{games[0].description}</p>
@@ -544,17 +568,21 @@ export default function BurgerLifePage() {
                     <Card
                       key={game.id}
                       className={`p-6 bg-gradient-to-br ${
-                        index === 0 ? "from-blue-400 to-purple-500" : "from-green-400 to-teal-500"
+                        index === 0 ? "from-blue-800 to-purple-900" : "from-green-800 to-teal-900"
                       } border-0 hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer text-white`}
                       onClick={() => startGame(game.id)}
                       style={{ animationDelay: `${index * 0.2}s` }}
                     >
-                      <div className="w-16 h-16 mb-3 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl">
-                        {game.emoji}
+                      <div className="w-16 h-16 mb-3 rounded-xl bg-white/20 backdrop-blur-sm overflow-hidden">
+                        <img
+                          src={game.coverImage || "/placeholder.svg"}
+                          alt={game.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{game.title}</h4>
-                      <p className="text-sm opacity-90 mb-4">{game.description}</p>
-                      <Button className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 font-bold py-2 rounded-full">
+                      <h4 className="text-xl font-bold mb-2 text-white">{game.title}</h4>
+                      <p className="text-sm mb-4 text-white/90">{game.description}</p>
+                      <Button className="w-full bg-white/80 hover:bg-white text-gray-800 hover:text-gray-900 font-bold py-2 rounded-full transform hover:scale-105 transition-all duration-300">
                         Play Now!
                       </Button>
                     </Card>
@@ -571,20 +599,32 @@ export default function BurgerLifePage() {
                       index % 2 === 0 ? "hover:rotate-2" : "hover:-rotate-2"
                     } ${
                       game.available
-                        ? `bg-gradient-to-br ${
+                        ? `${
                             index % 4 === 0
-                              ? "from-pink-300 to-rose-400"
+                              ? "bg-pink-900"
                               : index % 4 === 1
-                                ? "from-cyan-300 to-blue-400"
+                                ? "bg-cyan-900"
                                 : index % 4 === 2
-                                  ? "from-emerald-300 to-green-400"
-                                  : "from-violet-300 to-purple-400"
+                                  ? "bg-emerald-900"
+                                  : "bg-violet-900"
                           } border-0 hover:shadow-xl cursor-pointer text-white`
                         : "bg-gradient-to-br from-gray-200 to-gray-300 border-2 border-dashed border-gray-400 opacity-70"
                     }`}
                     style={{
                       animationDelay: `${index * 0.1}s`,
                       transform: `translateY(${index % 2 === 0 ? "10px" : "-10px"})`,
+                      backgroundColor: game.available
+                        ? index % 4 === 0
+                          ? "#7c2d12"
+                          : // brown-900
+                            index % 4 === 1
+                            ? "#164e63"
+                            : // cyan-900
+                              index % 4 === 2
+                              ? "#064e3b"
+                              : // emerald-900
+                                "#581c87" // violet-900
+                        : undefined,
                     }}
                     onClick={() => game.available && startGame(game.id)}
                   >
@@ -594,7 +634,15 @@ export default function BurgerLifePage() {
                           game.available ? "bg-white/20 backdrop-blur-sm" : "bg-gray-100"
                         }`}
                       >
-                        <div className={`text-6xl ${game.available ? "wiggle-animation" : ""}`}>{game.emoji}</div>
+                        {game.available ? (
+                          <img
+                            src={game.coverImage || "/placeholder.svg"}
+                            alt={game.title}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className={`text-6xl ${game.available ? "wiggle-animation" : ""}`}>{game.emoji}</div>
+                        )}
                         {!game.available && (
                           <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
                             <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full font-bold text-xs">
@@ -604,17 +652,21 @@ export default function BurgerLifePage() {
                         )}
                       </div>
 
-                      <h4 className={`text-lg font-bold mb-2 ${game.available ? "text-white" : "text-gray-600"}`}>
+                      <h4
+                        className={`text-lg font-bold mb-2 ${game.available ? "text-white" : "text-gray-600"}`}
+                        style={{ color: game.available ? "#ffffff" : undefined }}
+                      >
                         {game.title}
                       </h4>
                       <p
                         className={`text-sm mb-4 leading-relaxed ${game.available ? "text-white/90" : "text-gray-500"}`}
+                        style={{ color: game.available ? "rgba(255, 255, 255, 0.9)" : undefined }}
                       >
                         {game.description}
                       </p>
 
                       {game.available ? (
-                        <Button className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 font-bold py-2 rounded-full transform hover:scale-105 transition-all duration-300">
+                        <Button className="w-full bg-white/80 hover:bg-white text-gray-800 hover:text-gray-900 font-bold py-2 rounded-full transform hover:scale-105 transition-all duration-300">
                           🎮 Play!
                         </Button>
                       ) : (
@@ -689,7 +741,7 @@ export default function BurgerLifePage() {
             ].map((comment, index) => (
               <Card
                 key={index}
-                className="p-6 bg-white/98 border-4 border-yellow-300 hover:border-orange-400 transition-all duration-300 transform hover:scale-105 hover:-rotate-1 shadow-xl"
+                className="p-8 bg-white/98 border-4 border-yellow-300 hover:border-orange-400 transition-all duration-300 transform hover:scale-105 hover:-rotate-1 shadow-xl"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="text-center">
